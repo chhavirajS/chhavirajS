@@ -48,13 +48,13 @@
 
         }
         a {
-            color:rgb(223, 81, 81);
+            color:rgb(238, 1, 1);
             text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
+    
     <div class="container mt-5">
         <h2>Registration Form</h2>
         <form id="registrationForm" novalidate>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-sm-20">
                     <div class="form-group">
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="phone number">
+                        <input type="tel" class="form-control" id="phone" name="phone" >
                     </div>  
                 </div>
             </div>
@@ -176,7 +176,79 @@
             <br>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+           
+        
         </form>
-    </div>    
+    </div> 
+    <div class="main-block">
+        <div class="block-item left">
+            
+          <h1>Sign up with:</h1>
+        </div>
+        <div class="block-item right">
+           
+          <button class="btn facebook" data-provider="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></button>
+          <button class="btn twitter" data-provider="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></button>
+          <button class="btn google" data-provider="google"><i class="fab fa-google"></i><span>Google</span></button>
+        </div>
+      </div>   
+      <style>
+          
+h1 {
+      margin: 30px 30px 30px 30px;
+      font-weight:400;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      .main-block {
+          display: flex;
+      align-content: center;
+      padding: 20px,20px,20px; 
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px 1px rgb(32, 204, 118); 
+      background: rgb(24, 184, 10);
+      }
+      .block-item {
+      width: 40%;
+      padding: 30px; 
+      }
+      .block-item.right {
+      border-left: 1px solid #aaa;
+      }
+      i {
+      width: 90px;
+      font-size: 24px;
+      }
+      
+      .btn {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: 40px;
+      margin: 10px 0;
+      outline: none;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgb(42, 116, 48);
+      background: #e8e8e8;
+      color: #fff;
+      cursor: pointer;
+      }
+      .btn:hover {
+      transform: scale(1.03);
+      }
+      .btn span {
+      font-size: 16px;
+      }
+      .facebook {
+      background:rgb(17, 119, 214);
+      }
+      .twitter {
+      background: rgb(22, 77, 196);
+      }
+      .google{
+      background: rgb(238, 1, 1);
+      }
+      
+      </style>
 </body>
 </html> 
