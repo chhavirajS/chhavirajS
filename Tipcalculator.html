@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Total+Tip Calculator tipPerPerson</title>
+    <script>
+        function getBillAmount() {
+            let billAmount = document.getElementById("billAmount").value;
+            return billAmount;
+        }
+        function getServiceQuality() {
+            let serviceQuality = document.getElementById("serviceQuality").value;
+            return serviceQuality;
+        }
+        function getNumberOfPeople() {
+            let numberOfPeople = document.getElementById("numberOfPeopleOnTheBill").value;
+            return numberOfPeople;
+        }
+        function validateFormData(billAmount, serviceQuality, numberOfPeople) {
+            billAmount = parseFloat(billAmount);
+            serviceQuality = parseFloat(serviceQuality);
+            numberOfPeople = parseInt(numberOfPeople);
+            if (isNaN(billAmount)) {
+            alert("Please enter valid billAmount!");
+            return false;
+
+        }
+        if (isNaN(serviceQuality)) {
+            alert("Please enter valid serviceQuality!");
+            return false;
+        }
+        if (isNaN(numberOfPeople)) {
+            alert("Please enter valid numberOfPeople!");
+            return false;
+        }
+        return true;
+        }
+
+       
+        function calculateTip() {
+            let billAmount = getBillAmount();
+            let serviceQuality = getServiceQuality();
+            let numberOfPeople = getNumberOfPeople();
+            let isvalid = validateFormData(billAmount, serviceQuality, numberOfPeople);
+
+            if (!isvalid) {
+                return;
+            }
+
+            let totalTip = parseFloat(billAmount) * parseFloat(serviceQuality);
+            let total = totalTip + parseFloat(billAmount);
+            let amountperperson = total / parseInt(numberOfPeople);
+
+            document.getElementById("totalPerPerson").innerHTML = `$ ${amountPerPerson.toFixed(2)}`;
+        }
+    
+
+    </script>
+</head>
+
+<body>
+    <h1>Tip Calculator</h1>
+    <div id="calculator">
+
+        <form>
+            <p>How much was your bill?</p>
+            <p>$ <input id="billAmount" type="number" value="1.0" /></p>
+            <p>How was this service?</p>
+
+            <p>
+                <select id="serviceQuality">
+                    <option disabled selected value="0">-- Choose an Option --</option>
+                    <option value="0.2">Good</option>
+                    <option value="0.15">It was OK</option>
+                    <option value="0.05">Terrible</option>
+                </select>
+            </p>
+
+            <p>Number of people sharing the bill?</p>
+            <input id="numberOfPeopleOnTheBill" type="number" value="1" />
+
+            <button type="button" id="calculate" onclick="calculateTip();">Calculate Tip</button>
+        </form>
+        <p id="totalPerPerson"></p>
+    </div>
+</body>
+
+</html>

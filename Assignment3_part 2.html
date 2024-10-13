@@ -1,0 +1,23 @@
+<html>
+     <head>
+         <script> 
+
+function calculateNumberToothbrushForLife(age, amountPerMonth) {
+  
+   let maxAge = 90;  
+   let totalToothbrushes = 0;
+
+      for (let i = 0; i < age.length; i++) {
+         totalToothbrushes += (maxAge - age[i]) * 12 * amountPerMonth[i];
+          }
+  
+             console.log("You will need " + totalToothbrushes + " toothbrushes to last you until the age of " + maxAge);
+      } 
+
+                   calculateNumberToothbrushForLife([20, 40, 60, 80], [1, 1.5, 2, 2.5]);
+                   calculateNumberToothbrushForLife([25, 35, 45, 55], [1, 2, 1.5, 2.5]);
+
+
+          </script>
+     </head>
+</html>

@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Submission</title>
+    <title>Bootstrap Form Validation with jQuery</title>
    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     
     <script>
@@ -29,26 +30,13 @@
     </script>
 
     <style>
-        .row{ 
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
         body {
-            background-color: rgb(68, 246, 136);
-            color: rgb(2, 2, 1);
-            border: 20px solid #fff;
-            padding: 40px;
-             width: 100%;
-             min-width: 760px;
-    
+            background-color: rgb(130, 33, 126);
+            color: white;
         }
 
-        .form-group{
-
-           text-decoration: underline;
-
-        }
         a {
-            color:rgb(223, 81, 81);
+            color:white;
             text-decoration: underline;
         }
 
@@ -75,7 +63,7 @@
                 </div>
             </div>
 
-            
+            <!--Email-->
             <div class="row">
                 <div class="col-sm-2">
                     <p>
@@ -84,7 +72,7 @@
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email@.com" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                         <div class="invalid-feedback">
                             
                         </div>
@@ -99,7 +87,7 @@
                         Phone
                     </p>
                 </div>
-                <div class="col-sm-20">
+                <div class="col-sm-10">
                     <div class="form-group">
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="phone number">
                     </div>  
@@ -115,9 +103,9 @@
                             <option value="option1">Calgary</option>
                             <option value="option2">Edmonton</option>
                             <option value="option3">Montreal</option>
-                            <option value="option4">Ontario</option>
-                            <option value="option5">Winnipeg</option>
-                            <option value="option6">Surrey</option>
+                            <option value="option3">Ontario</option>
+                            <option value="option3">Winnipeg</option>
+                            <option value="option3">Surrey</option>
                         </select>
                     </div>
                 </div>
@@ -132,7 +120,7 @@
                 <div class="col-sm-8">
                     <div class="form-group">
                         <label for="city">City*</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                        <input type="text" class="form-control" id="city" name="city" required>
                     </div>
                 </div>
             </div>
@@ -145,7 +133,7 @@
                     <div class="form-group">
                         <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" maxlength="250" required></textarea>
                         <div class="invalid-feedback">
-                           
+                            Please enter a message in the textarea.
                         </div>
                     </div>
                 </div>
@@ -169,12 +157,13 @@
                     Agree to <a href="#">Terms and conditions</a>
                 </label>
                 <div class="invalid-feedback">
-                   Agree before submitting
+                    You must agree before submitting.
                 </div>
             </div>
 
             <br>
 
+            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>    

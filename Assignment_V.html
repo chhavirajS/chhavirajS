@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>Grocery Cart Online</title>
+</head>
+
+<script>
+    function toggleList() {
+        const list = document.getElementById('list');
+        if (list.style.display === 'none') {
+            list.style.display = 'block';
+        } else {
+            list.style.display = 'none';
+        }
+    }
+
+    function addItem() {
+        const ul = document.getElementById("toDoList");
+        const newItem = document.getElementById("newItemInput").value;
+        if (newItem.trim() !== "") {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(newItem));
+            ul.appendChild(li);
+            document.getElementById("newItemInput").value = "";
+        }
+    }
+
+    function sortList() {
+        const items = Array.from(toDoList.appendChild);
+        const sortedItems = items.sort((a, b) => a.innerText.localeCompare(b.innerText));
+
+        sortedItems.forEach(item => {
+            toDoList.appendChild(item);
+        });
+
+    }
+
+    function deleteItem() {
+        const deleteInput = document.getElementById("deleteInput").value.trim().toLowerCase();
+        const list = document.getElementById("toDoList");
+        const items = list.getElementsByTagName("li");
+
+        for (var i = 0; i < items.length; i++) {
+            var text = items[i].textContent.trim().toLowerCase();
+            if (text === deleteInput) {
+                list.removeChild(items[i]);
+                break;
+            }
+        }
+
+        document.getElementById("deleteInput").value = "";
+    }
+
+    function removeItem() {
+        const ul = document.getElementById('toDoList');
+        const firstChild = ul.firstElementChild;
+        if (firstChild) {
+            ul.removeChild(firstChild);
+        }
+    }
+
+    function clearList() {
+        const list = document.getElementById("toDoList");
+        list.innerHTML = "";
+    }
+</script>
+
+<body>
+
+    <h1 id="myHeading">GroceryCart</h1>
+
+    <div id="list">
+        <ul id="toDoList"></ul>
+        <p>Type a new item:</p>
+        <input type="text" id="newItemInput">
+        <button onclick="addItem()">Add item</button><br><br>
+        <button onclick="removeItem()">Remove item</button>
+    </div><br>
+    <div id="sort">
+        <button onclick="sortList()">Sort List</button>
+    </div>
+    <div id="clear"><br>
+        <button onclick="clearList()">Clear List</button>
+    </div>
+    <div id="deleteItem"><br>
+        <input type="text" id="deleteInput">
+        <button onclick="deleteItem()">Delete Item</button>
+    </div>
+</body>
+
+</html>
